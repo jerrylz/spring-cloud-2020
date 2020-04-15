@@ -39,7 +39,7 @@ public class PaymentController {
         if(payment != null){
             return new CommonResult<>(200, "查询成功", payment);
         }
-        return new CommonResult<>(444, "查询失败", null);
+        return new CommonResult<>(444, "未查到数据", null);
 
     }
 }
