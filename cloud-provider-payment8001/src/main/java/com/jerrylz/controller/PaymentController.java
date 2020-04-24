@@ -51,4 +51,9 @@ public class PaymentController {
     public Object discovery(){
         return discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
     }
+
+    @GetMapping("/payment/port")
+    public String getPort(){
+        return this.port;
+    }
 }

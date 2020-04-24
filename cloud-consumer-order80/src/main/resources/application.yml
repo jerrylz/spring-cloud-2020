@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: cloud-order-server
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 eureka:
   client:
     register-with-eureka: true

@@ -13,8 +13,13 @@ import org.springframework.web.client.RestTemplate;
 public class OrderConfiguration {
 
     @Bean
-    @LoadBalanced
+//    @LoadBalanced
     public RestTemplate getRestTemplate(){
         return new RestTemplate();
+    }
+
+    @Bean
+    public LoadBalance getLoadBalance(){
+        return new MyLB();
     }
 }

@@ -4,6 +4,7 @@ import com.jerrylz.entities.CommonResult;
 import com.jerrylz.entities.Payment;
 import com.jerrylz.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,6 +21,8 @@ import javax.annotation.Resource;
 @Slf4j
 public class PaymentController {
 
+    @Value("${server.port}")
+    private String port;
     @Resource
     private PaymentService paymentService;
 
@@ -42,5 +45,10 @@ public class PaymentController {
         }
         return new CommonResult<>(444, "未查到数据", null);
 
+    }
+
+    @GetMapping("/payment/port")
+    public String getPort(){
+        return this.port;
     }
 }
