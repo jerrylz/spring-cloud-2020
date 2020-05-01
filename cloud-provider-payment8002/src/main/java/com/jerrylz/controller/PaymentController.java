@@ -48,7 +48,7 @@ public class PaymentController {
 
     }
 
-    @GetMapping("/payment/port")
+    @GetMapping("/payment/get/port")
     public String getPort(){
         return this.port;
     }
